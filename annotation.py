@@ -1,7 +1,6 @@
 import os
 import random
 import streamlit as st
-import streamlit.session_state as SessionState
 from PIL import Image
 
 script_path = os.path.dirname(__file__)
@@ -9,7 +8,7 @@ rel_path = 'images'
 abs_file_path = script_path + '/' + rel_path
 files = os.listdir(rel_path)
 
-state = SessionState(
+state = st.beta_session_state(
     annotations={},
     files=files,
     current_image='cat.1.jpg'
